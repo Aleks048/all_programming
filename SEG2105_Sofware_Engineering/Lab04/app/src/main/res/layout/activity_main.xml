@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aleks048.lab04.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical|center"
+            android:onClick="OnSetAvatarButton"
+            app:srcCompat="@drawable/ic_logo_00"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:gravity="center_vertical|center"
+            android:text="Soccer Team Manager"
+            tools:layout_editor_absoluteX="122dp"
+            tools:layout_editor_absoluteY="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/teamNameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="(Please enter team's name)"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="248dp" />
+
+            <TextView
+                android:id="@+id/teamNameTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Team"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="369dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/teamAdressField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="(Please enter a ZIP Code)"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="307dp" />
+
+            <TextView
+                android:id="@+id/teamAdressTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/butMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="OnOpenInGoogleMaps"
+            android:text="Open the map"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="416dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
