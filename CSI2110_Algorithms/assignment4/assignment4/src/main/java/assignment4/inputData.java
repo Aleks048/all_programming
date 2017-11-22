@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.util.Vector;
 
 public class inputData{
+    protected static Vector<String[]> inputStations = new Vector <String[]>();
+    protected static Vector<String[]> inputDistances = new Vector <String[]>();
 
     public static void input() throws FileNotFoundException{
         
@@ -14,8 +16,7 @@ public class inputData{
      String numOfVertEdg = inputSc.nextLine();
      System.out.println(numOfVertEdg);
 
-     Vector<String[]> inputStations = new Vector <String[]>();
-     Vector<String[]> inputDistances = new Vector <String[]>();
+    
 
      while (inputSc.hasNextLine()){
          String temp = inputSc.nextLine();
