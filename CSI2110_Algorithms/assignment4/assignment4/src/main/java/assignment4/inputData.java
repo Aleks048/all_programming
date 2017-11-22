@@ -19,7 +19,8 @@ public class inputData{
 
      while (inputSc.hasNextLine()){
          String temp = inputSc.nextLine();
-         String [] tempArr = temp.split(" ");
+         String [] tempArr = new String[2];
+         tempArr = temp.split(" ");
          if (temp.equals("$")){break;}
          inputStations.add(tempArr);
      }
@@ -27,7 +28,10 @@ public class inputData{
 
      while(inputSc.hasNextLine()){
         String temp = inputSc.nextLine();
-        String [] tempArr = temp.split(" ");
+
+        String [] tempArr =new String[3];
+        tempArr =  temp.split(" ");
+
         inputDistances.add(tempArr);
      }
      System.out.println(inputDistances);
