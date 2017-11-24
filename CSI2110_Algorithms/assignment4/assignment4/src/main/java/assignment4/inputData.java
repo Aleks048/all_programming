@@ -22,7 +22,9 @@ public class inputData{
 
          if (temp.equals("$")){break;}
 
-         String [] tempArr = temp.split(" ");//create array of components of the vertex
+         String [] tempArr = new String[2];//create array of components of the vertex
+         tempArr[0]=temp.substring(0,4);
+         tempArr[1]=temp.substring(4,temp.length());
 
          Vertex tempV = new Vertex (tempArr[0],tempArr[1]);//(id, name)
          Graph.verticesArr[Integer.parseInt(tempV.getId())]= tempV;//put into array of vertices
@@ -56,7 +58,13 @@ public class inputData{
             System.out.println("It's not the file you're looking for.");
         }
 
+        //System.out.println(Graph.sameLine(11));
+        System.out.println();
         System.out.println(Graph.sameLine(12));
+        System.out.println();
+        System.out.println(Graph.sameLine(28));
+        System.out.println();
+        System.out.println(Graph.sameLine(363));
         
     } 
 }
