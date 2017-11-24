@@ -1,54 +1,44 @@
 package assignment4;
-import assignment4.Graph.Vertex;
+//import assignment4.Graph.Vertex;
 import java.util.Vector;
 
 public class Graph{
-    Vector<Vertex> vertices;
-    Vector<Edge> edges;
+    static Vector<Vertex> vertices = new Vector<Vertex>();
+    static Vector<Edge> edges = new Vector<Edge>();
+    static Vertex[] verticesArr;
 
-    class Edge{
-        int time;
-        private Vertex start;
-        private Vertex finish;
-    
-        public Edge(Vertex start,Vertex finish,int time){
-            this.start=start;
-            this.finish=finish;
-            this.time = time;
-        }
-    
-        public Vertex getStart(){return this.start;}
-        public Vertex getFinish(){return this.finish;}
+    private Graph(){
+    }
+
+    static public String sameLine(int VertexId){
+        String out ="";
+
+        Vertex root = verticesArr[VertexId];
         
-    
-    }
 
-    class Vertex{
-        String id;
-        String name;
-        private Vector<Edge> comingIn;
-        private Vector<Edge> goingOut;
-    
-        public Vertex(String name, String id){
-            this.name = name;
-            this.id = id;
-        }
-    
-        public void addEdgeIn(Edge in){
-            comingIn.add(in);
-        }
-        public void addEdgeOut(Edge out){
-            goingOut.add(out);
-        }
-    }
+        for (Edge e:root.getEdgesOut()){
+            if (e.getTime()!=-1){
+            
+            out+=Graph.sameLine(e.getFinish(),root);
+            out+="!"+root.getName()+"!";
 
-    public Graph(){}
-    private void GraphCreation(){
-        for (String[] i:inputData.inputStations){
-            vertices.add(new Vertex(i[1],i[0]));
+            }
         }
-        for (String[] j:inputData.inputStations){
-            //edges.add(new Edge(new Vertex(),new Vertex(),i[2]));
+
+        return out;
+    }
+    static private String sameLine(Vertex currentVertex,Vertex previousVertex){
+        String out ="";
+
+        if (currentVertex.getEdgesOut().size()==1){return currentVertex.getName();}//bottom condition
+        else{
+            for (Edge e:currentVertex.getEdgesOut()){
+                if ((e.getFinish()!=previousVertex)&&(e.getTime()!=-1)){
+                    out = currentVertex.getName()+" <- "+sameLine(e.getFinish(),currentVertex);
+
+                }
+            }
         }
+        return out;
     }
 }

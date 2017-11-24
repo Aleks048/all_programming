@@ -1,7 +1,7 @@
 package assignment4;
 
 public class Edge{
-    int time;
+    private int time;
     private Vertex start;
     private Vertex finish;
 
@@ -10,7 +10,8 @@ public class Edge{
         this.finish=finish;
         this.time = time;
     }
-
+    
+    public int getTime(){return this.time;}
     public Vertex getStart(){return this.start;}
     public Vertex getFinish(){return this.finish;}
     
