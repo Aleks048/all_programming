@@ -17,12 +17,9 @@ public class Graph{
 
         Vertex root = verticesArr[VertexId];
         
-        for(Edge e:root.getEdgesOut()){if(e.getTime()==-1){numOfWalkIntersections++;}}
- 
-        
+        for(Edge e:root.getEdgesOut()){if(e.getTime()==-1){numOfWalkIntersections++;}}//count the number of walking crossections
 
         for (Edge e:root.getEdgesOut()){
-            
             if (e.getTime()!=-1){
                 String temp = Graph.sameLine(e.getFinish(),root,isFirst);
                 out = temp + out;
@@ -44,9 +41,7 @@ public class Graph{
         String out ="";
         int numOfWalkIntersections = 0;
 
-        for (Edge e :currentVertex.getEdgesOut()){
-           if (e.getTime()==-1){numOfWalkIntersections++;}
-        }
+        for (Edge e :currentVertex.getEdgesOut()){ if (e.getTime()==-1){numOfWalkIntersections++;}}//find the number of walking crossections
         
         if ((currentVertex.getEdgesOut().size()==1)||((currentVertex.getEdgesOut().size()!=1)&&(numOfWalkIntersections==currentVertex.getEdgesOut().size()-1))){
             return currentVertex.getName()+"last";}//bottom condition//change me
@@ -59,7 +54,6 @@ public class Graph{
                     else{
                         out = sameLine(e.getFinish(),currentVertex,isFirst) +" -> "+ currentVertex.getName();//chamge me
                     }
-
                 }
             }
         }
