@@ -1,6 +1,7 @@
 package assignment4;
 //import assignment4.Graph.Vertex;
 import java.util.Vector;
+import java.util.PriorityQueue;
 
 public class Graph{
     static Vector<Vertex> vertices = new Vector<Vertex>();
@@ -58,5 +59,18 @@ public class Graph{
             }
         }
         return out;
+    }
+   
+
+    public void shortestPath(int id1,int id2){
+        PriorityQueue<Vertex> minQueue = new PriorityQueue<Vertex>();
+        Vertex start = verticesArr[id1];
+        Vertex finish = verticesArr[id2];
+        
+        start.setTimeToGethere(0);
+        minQueue.add(start);
+        
+
+        
     }
 }
