@@ -8,6 +8,7 @@ public class Vertex implements Comparator<Vertex>{
     private String name;
     private int timeToGetHere;
     boolean visited;
+    Vector<Vertex> pathToHere;
 
     private Vector<Edge> comingIn = new Vector<Edge>();
     private Vector<Edge> goingOut = new Vector<Edge>();
@@ -16,6 +17,8 @@ public class Vertex implements Comparator<Vertex>{
         this.name = name;
         this.id = id;
         timeToGetHere = -1;
+        this.visited = false;
+        pathToHere=null;
     }
 
     //Comparator methods
@@ -27,11 +30,15 @@ public class Vertex implements Comparator<Vertex>{
 
 
     //setters
+    public void setIsVisited(boolean in){this.visited=in;}
+    public void setPathToHere(Vector<Vertex> in){pathToHere=in;}
     public void addEdgeIn(Edge in){comingIn.add(in);}
     public void addEdgeOut(Edge out){goingOut.add(out);}
     public void setTimeToGethere(int time){this.timeToGetHere=time;}
 
     //getters
+    public Vector<Vertex> getPathToHere(){return pathToHere;};
+    public boolean getIsVisited(){return visited;};
     public String getId(){return id;}
     public String getName(){return name;}
     public int getTimeToGetHere(){return timeToGetHere;};

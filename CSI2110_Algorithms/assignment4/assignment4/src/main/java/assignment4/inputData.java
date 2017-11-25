@@ -60,11 +60,11 @@ public class inputData{
 
         //System.out.println(Graph.sameLine(11));
         System.out.println();
-        System.out.println(Graph.sameLine(12));
+       // System.out.println(Graph.sameLine(12));
         System.out.println();
-        System.out.println(Graph.sameLine(28));
+       // System.out.println(Graph.sameLine(201));
         System.out.println();
-        System.out.println(Graph.sameLine(363));
+        System.out.println(Graph.sameLine(0));
         
     } 
 }
