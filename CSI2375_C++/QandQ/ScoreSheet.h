@@ -16,15 +16,22 @@ struct RollOfDice;
 
 class ScoreSheet
 {
+    
+  private:
+  //data
     int overallScore;
     string name_player;
     bool ended;
     //Give the class ScoreSheet a print function that accepts an std::ostream and
   protected:
+  //data
+  int num_failed[4];
+  //methods
     virtual bool validate(int) = 0;
-    int num_failed[4];
+    
 
   public:
+  //data
     enum Color
     {
         RED,
@@ -33,13 +40,15 @@ class ScoreSheet
         GREEN,
         WHITE
     };
+  //constructors
     ScoreSheet(string s = "");
+  //methods
     virtual bool score(RollOfDice, Color, int pos = -1) = 0;
     void setTotal();
     virtual int calcTotal() = 0;
-    //void setTotal();
+    //void setTotal();//??delete
     virtual bool operator!();
-    //call cout of children
+    //call cout of children//??delete
     virtual ostream& print(ostream &)const = 0;
     friend ostream &operator<<(ostream &, const ScoreSheet &);
 };

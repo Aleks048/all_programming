@@ -35,13 +35,15 @@ struct RollOfDice
 
     //constructors
     RollOfDice(); //!!WARNING!!might use two diffrent construct if needed to work with both games
-    
+
     //methods
+    operator int();
     void roll();
     RollOfDice pair(int, int);
-    operator int();
+    
 };
 
+//various methods
 string colToStr(ScoreSheet::Color);
 ostream &operator<<(ostream &, const RollOfDice &);
 ostream &operator<<(ostream &, const Dice &);
