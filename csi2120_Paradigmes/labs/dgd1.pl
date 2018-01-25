@@ -9,4 +9,7 @@ grow(trees,mountains).
 size(trees,tall).
 size(grass,low).
 color(plains,brown).
-grow(weat,plains,
+grow(wheat,plains).
+color(wheat,yellow).
+size(wheat,low).
+
