@@ -29,6 +29,7 @@ canalOpen( tuesday ).
 
 raining( saturday ).
 
+
 melting( saturday ).
 melting( sunday ).
 melting( monday ).
@@ -42,3 +43,4 @@ winterlude(X):-canalOpen(X),nRaining(X),nMelting(X).
 
 secondLast(H,[H|[_|[]]]):-!. 
 secondLast(X,[_|T]):- secondLast(X,T).
+
